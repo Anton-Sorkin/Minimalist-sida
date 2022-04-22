@@ -2,12 +2,232 @@
 /*how to use mixins@include tablet {}*/
 /*how to use extends@extend .class-name;*/
 * {
-	margin: 0px;
-	padding: 0px;
-	box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
 }
 
 body {
-	font-size: 14pt;
-	/*all styling here*/
+  font-size: 16pt;
+  background-color: #f39200;
+  width: 100vw;
+  height: 100vh;
+  .sections-container {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 0.7fr 1fr 1fr 1fr 0.7fr;
+    grid-template-rows: 0.7fr 1fr 1fr 1fr 0.7fr;
+    grid-template-areas:
+      "a . . . g"
+      "a b c c c"
+      "a d d e e"
+      "a d d e e"
+      "a . . . f";
+    @include mobile {
+      grid-template-columns: 0.7fr 1fr 1fr 1fr 1fr;
+      grid-template-rows: 0.7fr 1fr 0.7fr 1fr 0.7fr;
+    }
+    @include pc {
+      grid-template-columns: 0.7fr 1fr 0.7fr 1fr 0.5fr;
+      grid-template-rows: 0.7fr 1fr 1fr 1fr 0.7fr;
+    }
+    .nav-sidebar {
+      width: 100%;
+      height: 100%;
+      background-color: #e84f1b;
+      grid-area: a;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      h2 {
+        font-size: 16pt;
+        position: relative;
+        top: 70px;
+        @include mobile {
+          font-size: 14pt;
+        }
+        @include pc {
+          font-size: 18pt;
+        }
+      }
+      p {
+        font-size: 13pt;
+        position: relative;
+        top: 80px;
+        @include mobile {
+          font-size: 11pt;
+        }
+        @include pc {
+          font-size: 16pt;
+        }
+      }
+    }
+    .nav-hamburger {
+      width: 100%;
+      height: 100%;
+      grid-area: b;
+      display: flex;
+      justify-content: center;
+      .block1 {
+        height: 7.5px;
+        width: 50px;
+        background-color: black;
+        position: relative;
+        top: 30px;
+        .block2 {
+          height: 7.5px;
+          width: 75px;
+          background-color: black;
+          position: absolute;
+          top: 20px;
+        }
+        .block3 {
+          height: 7.5px;
+          width: 75px;
+          background-color: black;
+          position: absolute;
+          top: 40px;
+        }
+      }
+    }
+    .main-titles {
+      width: 100%;
+      height: 100%;
+      grid-area: c;
+      h1 {
+        font-size: 22pt;
+        @include mobile {
+          font-size: 20pt;
+        }
+        @include pc {
+          font-size: 25pt;
+        }
+      }
+    }
+    .main-picture-wrapper {
+      width: 100%;
+      height: 100%;
+      grid-area: d;
+      display: flex;
+      flex-direction: row-reverse;
+
+      .image-background {
+        width: 95%;
+        height: 95%;
+        background-color: #e84f1b;
+        display: flex;
+        flex-direction: row-reverse;
+        .main-img {
+          width: 96%;
+          height: 96%;
+          background-image: url(../assets/Picture.png);
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          .img-tint {
+            width: 100%;
+            height: 100%;
+            background: rgba(232, 79, 27, 0.3);
+          }
+        }
+      }
+    }
+    .about-us {
+      width: 100%;
+      height: 100%;
+      grid-area: e;
+      display: flex;
+      align-items: center;
+      .english-about {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        text-align: start;
+        justify-content: center;
+        padding-left: 10px;
+        h2 {
+          font-size: 20pt;
+          @include mobile {
+            font-size: 17pt;
+          }
+          @include pc {
+            font-size: 23pt;
+          }
+        }
+        p {
+          font-size: 14pt;
+          @include mobile {
+            font-size: 11pt;
+          }
+          @include pc {
+            font-size: 17pt;
+          }
+        }
+      }
+      .chi-about {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        text-align: end;
+        justify-content: center;
+        padding-right: 10px;
+        padding-left: 10px;
+        h2 {
+          font-size: 20pt;
+          @include mobile {
+            font-size: 17pt;
+          }
+          @include pc {
+            font-size: 23pt;
+          }
+        }
+        p {
+          font-size: 14pt;
+          @include mobile {
+            font-size: 11pt;
+          }
+          @include pc {
+            font-size: 17pt;
+          }
+        }
+      }
+    }
+    .secondary-image {
+      width: 100%;
+      height: 100%;
+      background-color: #e84f1b;
+      grid-area: f;
+      display: flex;
+
+      .secondary-img {
+        width: 95%;
+        height: 92%;
+        background-image: url(../assets/Picture.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        .img-tint {
+          width: 100%;
+          height: 100%;
+          background: rgba(232, 79, 27, 0.3);
+        }
+      }
+    }
+    .logo {
+      width: 100%;
+      height: 100%;
+      grid-area: g;
+      background-image: url(../assets/logo.png);
+    }
+  }
+}
+
+@include mobile {
+}
+
+@include pc {
 }
