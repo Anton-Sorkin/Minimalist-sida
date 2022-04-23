@@ -41,15 +41,19 @@ body {
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      h2 {
-        font-size: 16pt;
-        position: relative;
-        top: 70px;
-        @include mobile {
-          font-size: 14pt;
-        }
-        @include pc {
-          font-size: 18pt;
+      a {
+        color: black;
+        h2 {
+          font-size: 16pt;
+          position: relative;
+          top: 70px;
+          color: black;
+          @include mobile {
+            font-size: 14pt;
+          }
+          @include pc {
+            font-size: 18pt;
+          }
         }
       }
       p {
@@ -224,10 +228,4 @@ body {
       background-image: url(../assets/logo.png);
     }
   }
-}
-
-@include mobile {
-}
-
-@include pc {
 }

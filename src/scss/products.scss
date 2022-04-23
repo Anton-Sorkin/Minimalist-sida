@@ -1,0 +1,68 @@
+@import "./components/mixins";
+/*how to use mixins@include tablet {}*/
+/*how to use extends@extend .class-name;*/
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 16pt;
+  background-color: #f39200;
+  width: 100vw;
+  height: 100%;
+  .product-container {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 0.7fr;
+    grid-template-rows: 0.7fr 1fr 1fr 1fr 0.7fr;
+    grid-template-areas:
+      ". . . . ."
+      ". a a . ."
+      ". a a . ."
+      "c a a b b"
+      ". . . . .";
+    @include mobile {
+      grid-template-columns: 0.7fr 1fr 1fr 1fr 1fr;
+      grid-template-rows: 0.7fr 1fr 0.7fr 1fr 0.7fr;
+    }
+    @include pc {
+      grid-template-columns: 0.7fr 1fr 0.7fr 1fr 0.5fr;
+      grid-template-rows: 0.7fr 1fr 1fr 1fr 0.7fr;
+    }
+    .main-product {
+      width: 100%;
+      height: 100%;
+      grid-area: a;
+      background-image: url(../assets/product.png);
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    .product-desc {
+      width: 100%;
+      height: 100%;
+      grid-area: b;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .go-back {
+      width: 100%;
+      height: 100%;
+      grid-area: c;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      a {
+        color: black;
+        h2 {
+          font-size: 14pt;
+        }
+      }
+    }
+  }
+}

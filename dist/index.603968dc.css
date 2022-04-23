@@ -41,18 +41,22 @@ body .sections-container .nav-sidebar {
   justify-content: center;
   align-items: center;
 }
-body .sections-container .nav-sidebar h2 {
+body .sections-container .nav-sidebar a {
+  color: black;
+}
+body .sections-container .nav-sidebar a h2 {
   font-size: 16pt;
   position: relative;
   top: 70px;
+  color: black;
 }
 @media (max-width: 640px) {
-  body .sections-container .nav-sidebar h2 {
+  body .sections-container .nav-sidebar a h2 {
     font-size: 14pt;
   }
 }
 @media (min-width: 1440px) {
-  body .sections-container .nav-sidebar h2 {
+  body .sections-container .nav-sidebar a h2 {
     font-size: 18pt;
   }
 }
